@@ -2,37 +2,119 @@
 <html>
 <head>
 	<title>Chat Example</title>
-	<script>
-		// Load the chat messages from localStorage on page load
-		window.onload = function() {
-			var chatMessages = localStorage.getItem('chatMessages');
-			if (chatMessages) {
-				document.getElementById('chat-area').innerHTML = chatMessages;
-			}
-		};
-
-		function sendMessage() {
-			// Get the current date and time
-			var now = new Date();
-			var timestamp = now.toLocaleTimeString();
-
-			// Get the user's message and clear the input field
-			var message = document.getElementById('message-input').value;
-			document.getElementById('message-input').value = '';
-
-			// Add the message to the chat window and store it in localStorage
-			var chatArea = document.getElementById('chat-area');
-			chatArea.innerHTML += '[' + timestamp + '] ' + message + '<br>';
-			localStorage.setItem('chatMessages', chatArea.innerHTML);
+	<style>
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			margin: 0;
+			padding: 0;
 		}
-	</script>
+css
+Copy code
+	h1 {
+		background-color: #075e54;
+		color: #fff;
+		font-size: 24px;
+		margin: 0;
+		padding: 10px;
+		text-align: center;
+	}
+
+	#chat-area {
+		background-color: #fff;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+		margin: 10px auto;
+		max-width: 600px;
+		padding: 10px;
+		overflow-y: scroll;
+		height: 400px;
+	}
+
+	.chat-message {
+		margin-bottom: 10px;
+	}
+
+	.chat-message .message-time {
+		color: #999;
+		font-size: 12px;
+		margin-right: 5px;
+	}
+
+	.chat-message .message-text {
+		background-color: #dcf8c6;
+		border-radius: 10px;
+		color: #333;
+		display: inline-block;
+		padding: 5px 10px;
+		max-width: 70%;
+	}
+
+	form {
+		display: flex;
+		margin: 10px auto;
+		max-width: 600px;
+		padding: 10px;
+	}
+
+	input[type="text"] {
+		border-radius: 20px;
+		border: none;
+		flex-grow: 1;
+		font-size: 16px;
+		margin-right: 10px;
+		padding: 10px;
+	}
+
+	button[type="submit"] {
+		background-color: #075e54;
+		border: none;
+		border-radius: 20px;
+		color: #fff;
+		cursor: pointer;
+		font-size: 16px;
+		padding: 10px 20px;
+		transition: background-color 0.3s;
+	}
+
+	button[type="submit"]:hover {
+		background-color: #128c7e;
+	}
+</style>
+<script>
+	// Load the chat messages from localStorage on page load
+	window.onload = function() {
+		var chatMessages = localStorage.getItem('chatMessages');
+		if (chatMessages) {
+			document.getElementById('chat-area').innerHTML = chatMessages;
+		}
+	};
+
+	function sendMessage() {
+		// Get the current date and time
+		var now = new Date();
+		var timestamp = now.toLocaleTimeString();
+
+		// Get the user's message and clear the input field
+		var message = document.getElementById('message-input').value;
+		document.getElementById('message-input').value = '';
+
+		// Generate a random username
+		var usernames = ['Alice', 'Bob', 'Charlie', 'David', 'Emily', 'Frank', 'Grace', 'Henry', 'Isabelle', 'Jack', 'Kate', 'Liam', 'Mia', 'Nora', 'Oliver', 'Penny', 'Quincy', 'Rachel', 'Samuel', 'Taylor', 'Ursula', 'Victor', 'Wendy', 'Xavier', 'Yvonne', 'Zachary'];
+		var username = usernames[Math.floor(Math.random() * usernames.length)];
+				var chatMessage = '<div class="chat-message"><span class="message-time">[' + timestamp + ']</span><span class="message-username">' + username + ':</span><span class="message-text">' + message + '</span></div>';
+		chatArea.innerHTML += chatMessage;
+		localStorage.setItem('chatMessages', chatArea.innerHTML);
+	}
+</script>
 </head>
 <body>
 	<h1>Chat Example</h1>
 	<div id="chat-area"></div>
-	<form>
-		<input type="text" id="message-input">
-		<button type="button" onclick="sendMessage()">Send</button>
+	<form onsubmit="sendMessage(); return false;">
+		<input type="text" id="message-input" placeholder="Type a message...">
+		<button type="submit">Send</button>
 	</form>
 </body>
 </html>
