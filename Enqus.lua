@@ -128,7 +128,7 @@ local function LTIIHN_fake_script() -- InfiniteYield.InfiniteYield
 	
 	
 	button.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/RBXLLUA/main/InfiniteYield.lua'))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/EnqusDoors/main/InfiniteYield.lua'))()
 	end)
 	
 end
@@ -184,7 +184,7 @@ local function YOKCY_fake_script() -- PoopDoors.PoopDoors
 	
 	
 	button.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/RBXLLUA/main/PoopDoors.lua'))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/EnqusDoors/main/PoopDoors.lua'))()
 	end)
 	
 end
@@ -197,7 +197,7 @@ local function BTVIBR_fake_script() -- DarkraiX.DarkraiX
 	
 	
 	button.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/RBXLLUA/main/Darkrai.lua'))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/EnqusDoors/main/Darkrai.lua'))()
 	end)
 	
 end
@@ -210,7 +210,7 @@ local function EKET_fake_script() -- ProjectWD.ProjectWD
 	
 	
 	button.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/RBXLLUA/main/ProjectWD.lua'))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/EnqusDoors/main/ProjectWD.lua'))()
 	end)
 	
 end
@@ -223,7 +223,7 @@ local function SOQJ_fake_script() -- Dansploit.DanSploit
 	
 	
 	button.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/RBXLLUA/main/Dansploit.lua'))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/EnqusDoors/main/Dansploit.lua'))()
 	end)
 	
 end
@@ -236,7 +236,7 @@ local function IJYL_fake_script() -- Vynixius.Vynixius
 	
 	
 	button.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/RBXLLUA/main/Vynixius.lua'))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/XX-Crafter-XX/EnqusDoors/main/Vynixius.lua'))()
 	end)
 	
 end
