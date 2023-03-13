@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat Example</title>
+	<script>
+		// Load the chat messages from localStorage on page load
+		window.onload = function() {
+			var chatMessages = localStorage.getItem('chatMessages');
+			if (chatMessages) {
+				document.getElementById('chat-area').innerHTML = chatMessages;
+			}
+		};
+
+		function sendMessage() {
+			// Get the current date and time
+			var now = new Date();
+			var timestamp = now.toLocaleTimeString();
+
+			// Get the user's message and clear the input field
+			var message = document.getElementById('message-input').value;
+			document.getElementById('message-input').value = '';
+
+			// Add the message to the chat window and store it in localStorage
+			var chatArea = document.getElementById('chat-area');
+			chatArea.innerHTML += '[' + timestamp + '] ' + message + '<br>';
+			localStorage.setItem('chatMessages', chatArea.innerHTML);
+		}
+	</script>
+</head>
+<body>
+	<h1>Chat Example</h1>
+	<div id="chat-area"></div>
+	<form>
+		<input type="text" id="message-input">
+		<button type="button" onclick="sendMessage()">Send</button>
+	</form>
+</body>
+</html>
